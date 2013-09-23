@@ -5,16 +5,6 @@ DAEMON_ROOT = File.dirname(File.dirname(__FILE__))
 
 options = YAML.load_file(DAEMON_ROOT + "/config/smtp.yml")
 
-# {
-#   :address              => "smtp.gmail.com",
-#   :port                 => 587,
-#   :domain               => 'smtp.gmail.com',
-#   :user_name            => 'fenix.mercury@gmail.com',
-#   :password             => 'xwynmntnkeuuxnwa',
-#   :authentication       => 'plain',
-#   :enable_starttls_auto => true
-# }
-
 Mail.defaults do
   delivery_method :smtp, options
 end
