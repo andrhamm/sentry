@@ -1,0 +1,3 @@
+log/*.log
+config/wards/*.yml
+config/smtp.yml
