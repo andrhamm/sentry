@@ -17,7 +17,7 @@ Or
 Sentry currently only supports SMTP email sending. Rename `config/sample_smtp.yml` to `config/smtp.yml` and update with your email connection settings.
 
 ## Create your "wards"
-Tell Sentry what to look for, on which sites, by creating your own custom "wards" in the `config/wards` directory. A ward is a simple YAML config that specifies which URLs to monitor, and the conditions on which you want to be alerted. A sample ward has been provided. Support for additional conditions will be added in future versions.
+Tell Sentry what to look for, on which sites, by creating your own custom "wards" in the `config/wards` directory. A ward is a simple YAML config that specifies which URLs to monitor, and the conditions on which you want to be alerted. A sample ward has been provided, but `sample.yml` will not function until the file is renamed. Support for additional conditions will be added in future versions.
 
 ## Installation
 Install dependencies, then simply run `bundle install`

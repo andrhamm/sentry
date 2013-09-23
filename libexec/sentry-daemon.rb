@@ -34,7 +34,7 @@ end
 
 DaemonKit.logger.info '"I am the watcher on the wall"'
 
-wards = Dir[DAEMON_ROOT + "/config/wards/**/*.yml"].map do |file|
+wards = Dir[DAEMON_ROOT + "/config/wards/**/*.yml"].reject{ |f| f =~ /sample.yml$/ }.map do |file|
   Mash.new YAML.load_file(file)
 end
 
