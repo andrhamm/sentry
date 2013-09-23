@@ -1,0 +1,14 @@
+url: 'http://www.mbta.com'
+name: 'MBTA'
+checks:
+  -
+    check_if: 'the RED LINE is experiencing delays'
+    uri: '/rider_tools/transit_updates/?ttype=subway&advistory=true&route=Red+Line#details'
+    conditions:
+      -
+        request_status: 200
+        body_contains_string: 'current'
+    notifications:
+      -
+        to: '<my email address here>'
+        subject: 'RED LINE is delayed!'

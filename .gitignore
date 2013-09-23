@@ -1,3 +1,4 @@
 log/*.log
 config/wards/*.yml
+!config/wards/sample.yml
 config/smtp.yml
