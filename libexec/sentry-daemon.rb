@@ -1,14 +1,6 @@
 require 'yaml'
 require 'mail'
 
-DAEMON_ROOT = File.dirname(File.dirname(__FILE__))
-
-options = YAML.load_file(DAEMON_ROOT + "/config/smtp.yml")
-
-Mail.defaults do
-  delivery_method :smtp, options
-end
-
 # Change this file to be a wrapper around your daemon code.
 
 # Do your post daemonization configuration here
@@ -23,6 +15,12 @@ DaemonKit::Application.running! do |config|
 end
 
 DaemonKit.logger.info '"I am the watcher on the wall"'
+
+options = YAML.load_file(DAEMON_ROOT + "/config/smtp.yml")
+
+Mail.defaults do
+  delivery_method :smtp, options
+end
 
 wards = Dir[DAEMON_ROOT + "/config/wards/**/*.yml"].reject{ |f| f =~ /sample.yml$/ }.map do |file|
   Mash.new YAML.load_file(file)
