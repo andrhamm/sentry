@@ -2,6 +2,8 @@ sentry
 ======
 `sentry` will watch any web request for you and notify you when the desired condition is met.
 
+[![Code Climate](https://codeclimate.com/github/andrhamm/sentry.png)](https://codeclimate.com/github/andrhamm/sentry)
+
 ## Usage
 To run the bot, simply run
 
